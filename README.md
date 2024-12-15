@@ -56,8 +56,10 @@ async def predict(prompt: str):
 3. **Ejecutar el servidor:**
 
 uvicorn main:app --reload
+uvicorn api.assistans:app --reload
 
 4. **Probar la API:** Enviar solicitudes POST a /predict/ con un prompt para obtener respuestas generadas por IA.
+   127.0.0.1:8000/docs#
 
 ## Conclusión
 Este proyecto demuestra cómo combinar herramientas modernas para desarrollar productos de IA efectivos. Gracias a Python, FastAPI y OpenAI, podemos resolver problemas reales de manera escalable, eficiente y profesional. ¡Explorar el potencial de la IA nunca ha sido tan accesible!

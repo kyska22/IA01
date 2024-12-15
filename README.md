@@ -44,18 +44,27 @@ import openai
 app = FastAPI()
 
 @app.post("/predict/")
+
 async def predict(prompt: str):
+
     openai.api_key = "tu-clave-api"
+    
     response = openai.Completion.create(
+    
         engine="text-davinci-003",
+        
         prompt=prompt,
+        
         max_tokens=100
+        
     )
+    
     return {"response": response.choices[0].text.strip()}
 
 3. **Ejecutar el servidor:**
 
 uvicorn main:app --reload
+
 uvicorn api.assistans:app --reload
 
 4. **Probar la API:** Enviar solicitudes POST a /predict/ con un prompt para obtener respuestas generadas por IA.
